@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NewAppDI</string>
+    <string name="hello_blank_fragment">NewAppDI</string>
+    <string name="breaking_new">Breaking New</string>
+    <string name="favourite">Favourite</string>
+    <string name="search">Search</string>
+</resources>

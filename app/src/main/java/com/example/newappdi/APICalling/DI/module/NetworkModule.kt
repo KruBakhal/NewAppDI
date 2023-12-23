@@ -20,7 +20,7 @@ import javax.inject.Singleton
 @Named("api_call")
 class NetworkModule {
 
-    val BASEURL = "http://22161.35.119.227/artwork_cache/api/AdvertiseNewApplications/17/"
+    val BASEURL = "http://161.35.119.227/artwork_cache/api/AdvertiseNewApplications/17/"
 
     @Provides
     @Singleton

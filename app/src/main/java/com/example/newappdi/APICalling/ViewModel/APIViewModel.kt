@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.newappdi.APICalling.DI.APIRespository
 import com.example.newappdi.APICalling.DI.Network.ErrorResponse
+import com.example.newappdi.APICalling.DI.Network.Response
 import com.example.newappdi.APICalling.DI.Network.SuccessResponse
 import com.example.newappdi.APICalling.model.AppMainData
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,29 +18,11 @@ class APIViewModel @Inject constructor(
    val apiCallServices: APIRespository
 ) : ViewModel() {
 
-    val apiDataList = MutableLiveData<AppMainData>()
+    val apiDataList = MutableLiveData<Response<AppMainData>>()
     fun getAppData() {
         viewModelScope.launch {
             val data = apiCallServices.getData()
-            when(data){
-               is SuccessResponse ->{
-                   if (data.data!=null) {
-                       apiDataList.postValue(data.data)
-                   } else {
-                       Log.d("TAG", "getAppData: onFailed Or Error")
-                   }
-               }
-
-                is ErrorResponse ->{
-
-               }
-
-                else -> {
-
-                }
-            }
-
-
+            apiDataList.postValue(data)
         }
     }
 

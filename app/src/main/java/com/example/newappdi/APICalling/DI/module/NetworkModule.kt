@@ -1,9 +1,8 @@
 package com.example.newappdi.APICalling.DI.module
 
+import com.example.newappdi.APICalling.DI.BaseUrl2Retrofit
 import com.example.newappdi.APICalling.DI.Network.APICallServices
 import com.google.gson.GsonBuilder
-import dagger.Binds
-import dagger.BindsInstance
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,12 +20,11 @@ import javax.inject.Singleton
 @Named("api_call")
 class NetworkModule {
 
-    val BASEURL = "http://161.35.119.227/artwork_cache/api/AdvertiseNewApplications/17"
+    val BASEURL = "http://22161.35.119.227/artwork_cache/api/AdvertiseNewApplications/17/"
 
     @Provides
     @Singleton
-    @Named("api_call")
-
+    @BaseUrl2Retrofit
     fun provideRetrofitClient(): Retrofit {
         var okHttpClient: OkHttpClient = OkHttpClient.Builder()
             .callTimeout(10, TimeUnit.SECONDS)
@@ -53,11 +51,11 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    @Named("api_call")
-    @BindsInstance
-    fun provideRetrofitService(clientr: Retrofit): APICallServices {
+    @BaseUrl2Retrofit
+    fun provideRetrofitService(@BaseUrl2Retrofit clientr: Retrofit): APICallServices {
         return clientr.create(APICallServices::class.java)
     }
+
 
 
     fun provideOkHttpClient(interceptor: HttpLoggingInterceptor): OkHttpClient {

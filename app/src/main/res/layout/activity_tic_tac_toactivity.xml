@@ -7,7 +7,7 @@
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:layout_height="match_parent"
-        tools:context=".TicTacTO.TicTacTOActivity">
+        tools:context=".tictacto.TicTacTOActivity">
 
         <TextView
             android:id="@+id/tvTxt"

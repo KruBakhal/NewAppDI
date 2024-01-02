@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".QuizGame.GameActivity">
+        tools:context=".quizgame.GameActivity">
 
         <TextView
             android:id="@+id/tv_title"

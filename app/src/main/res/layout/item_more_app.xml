@@ -2,6 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+        <variable
+            name="model"
+            type="com.example.newappdi.api_calling.model.SubCategory" />
 
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,6 +18,7 @@
             android:layout_width="160dp"
             android:layout_height="90dp"
             android:scaleType="centerCrop"
+            icon="@{model.icon}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:contentDescription="@string/search" />
@@ -24,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="SOURCE"
+            android:text="@{model.name}"
             android:textColor="@android:color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivArticleImage" />
@@ -36,7 +40,7 @@
             android:layout_marginStart="8dp"
             android:ellipsize="end"
             android:maxLines="3"
-            android:text="TITLE"
+            android:text="@{model.star}"
             android:textColor="@android:color/black"
             android:textSize="15sp"
             android:textStyle="bold"
@@ -53,7 +57,7 @@
             android:layout_marginTop="16dp"
             android:ellipsize="end"
             android:maxLines="5"
-            android:text="DESCRIPTION"
+            android:text="@{model.appLink}"
             android:textColor="@android:color/black"
             app:layout_constrainedWidth="true"
             app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="PUBLISHED AT"
+            android:text="@{model.appId.toString()}"
             android:textColor="@android:color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvSource" />

@@ -4,10 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.example.newappdi.APICalling.APICallActivity
-import com.example.newappdi.NewApp.NewsActivity
-import com.example.newappdi.QuizGame.GameActivity
-import com.example.newappdi.TicTacTO.TicTacTOActivity
+import com.example.newappdi.api_calling.APICallActivity
+import com.example.newappdi.newapp.NewsActivity
+import com.example.newappdi.quizgame.GameActivity
+import com.example.newappdi.tictacto.TicTacTOActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

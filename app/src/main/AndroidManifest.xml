@@ -17,19 +17,19 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".QuizGame.ResultActivity"
+            android:name=".quizgame.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".QuizGame.GameActivity"
+            android:name=".quizgame.GameActivity"
             android:exported="false" />
         <activity
-            android:name=".TicTacTO.TicTacTOActivity"
+            android:name=".tictacto.TicTacTOActivity"
             android:exported="false" />
         <activity
-            android:name=".APICalling.APICallActivity"
+            android:name=".api_calling.APICallActivity"
             android:exported="false" />
         <activity
-            android:name=".NewApp.NewsActivity"
+            android:name=".newapp.NewsActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

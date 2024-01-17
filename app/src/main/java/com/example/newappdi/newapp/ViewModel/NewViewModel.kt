@@ -27,9 +27,7 @@ class NewViewModel @Inject constructor(val repository: Repository, val db:Databa
     var searchNewPage: Int = 1
     var favStatus = MutableLiveData<Boolean>()
 
-    init {
-        getBreakingNews("us")
-    }
+
 
     fun getBreakingNews(countryCode: String) {
         viewModelScope.launch {

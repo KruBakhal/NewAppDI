@@ -33,7 +33,7 @@ class NetworkModule {
             .writeTimeout(50, TimeUnit.SECONDS)
             .build()
 
-        var okHttpClientForMoreAppsView: OkHttpClient = OkHttpClient.Builder()
+        val okHttpClientForMoreAppsView: OkHttpClient = OkHttpClient.Builder()
             .callTimeout(8, TimeUnit.SECONDS)
             .connectTimeout(8, TimeUnit.SECONDS)
             .readTimeout(50, TimeUnit.SECONDS)

@@ -1,6 +1,6 @@
 package com.example.newappdi.api_calling.DI.Network
 
-sealed class Response<out T : Any>{
+sealed class Response<out T : Any> {
 
 }
 

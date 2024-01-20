@@ -3,7 +3,6 @@ package com.example.newappdi.NewsApp.Utils
 import android.content.Context
 import android.net.ConnectivityManager
 import android.util.Log
-import com.example.newappdi.BuildConfig
 
 class Constant {
     companion object {
@@ -25,9 +24,4 @@ class Constant {
         const val NO_CONNECTION = "Internet unavailable."
     }
 
-}
-fun String.log(tag: String = ">>>>>>>>") {
-    if (BuildConfig.DEBUG) {
-        Log.e(tag, this)
-    }
 }

@@ -20,7 +20,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.8"
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -28,11 +33,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_16
-        targetCompatibility JavaVersion.VERSION_16
+        sourceCompatibility JavaVersion.VERSION_18
+        targetCompatibility JavaVersion.VERSION_18
     }
     kotlinOptions {
-        jvmTarget = '16'
+        jvmTarget = '18'
     }
     dataBinding {
         enabled = true
@@ -40,6 +45,9 @@ android {
    /* viewBinding {
         enabled = true
     }*/
+    hilt {
+        enableAggregatingTask = false
+    }
 }
 
 dependencies {
@@ -76,4 +84,18 @@ dependencies {
     // Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:2.4.2"
     implementation "com.github.pzienowicz:androidx-auto-scroll-view-pager:1.4.0"
+
+
+    //compose
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.material:material'
+    implementation 'androidx.compose.runtime:runtime'
+    implementation 'androidx.activity:activity-compose:1.7.2'
+    implementation platform('androidx.compose:compose-bom:2023.10.01')
+    implementation 'androidx.compose.ui:ui-graphics'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    implementation 'com.github.bumptech.glide:compose:1.0.0-beta01'
+
+
 }

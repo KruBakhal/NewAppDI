@@ -1,6 +1,5 @@
-package com.example.newappdi.NewsApp.UI.fragments
+package com.example.newappdi.newapp.fragments
 
-import android.adservices.topics.Topic
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,16 +8,9 @@ import android.view.ViewGroup
 import android.webkit.WebViewClient
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.navArgs
-import com.androiddevs.mvvmnewsapp.db.ArticleDatabase
 import com.example.newappdi.NewsApp.Model.Article
 import com.example.newappdi.R
-import com.example.newappdi.NewsApp.Repository.NetworkRepo
-import com.example.newappdi.NewsApp.Repository.NewsViewModelProviderFactory
 import com.example.newappdi.NewsApp.ViewModel.NewViewModel
-import com.example.newappdi.NewsApp.ViewModel.SampleViewModel
-import com.example.newappdi.databinding.FragmentBreakingNewsBinding
 import com.example.newappdi.databinding.FragmentDetailBinding
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint

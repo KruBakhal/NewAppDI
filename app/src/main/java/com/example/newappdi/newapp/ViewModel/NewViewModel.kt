@@ -4,18 +4,24 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
+import androidx.paging.map
 import com.example.newappdi.newapp.DI.network.Repository
 import com.example.newappdi.NewsApp.Model.Article
 import com.example.newappdi.NewsApp.Model.NewsResponse
 import com.example.newappdi.NewsApp.Repository.DatabaseRepo
 import com.example.newappdi.NewsApp.Utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
-class NewViewModel @Inject constructor(val repository: Repository, val db:DatabaseRepo) : ViewModel() {
+class NewViewModel @Inject constructor(val repository: Repository, val db: DatabaseRepo) :
+    ViewModel() {
 
 
     private var breakingNewsResponse: NewsResponse? = null
@@ -28,16 +34,24 @@ class NewViewModel @Inject constructor(val repository: Repository, val db:Databa
     var favStatus = MutableLiveData<Boolean>()
 
 
-
     fun getBreakingNews(countryCode: String) {
         viewModelScope.launch {
             breakingNew.postValue(Resource.Loading())
-            val response =  repository.getBreakingNew(countryCode, breakingNewPage)
-            val resposValue=handleBreakingResponse(response)
-            Log.d("TAG", "getBreakingNews: "+resposValue)
+            val response = repository.getBreakingNew(countryCode, breakingNewPage)
+            val resposValue = handleBreakingResponse(response)
+            Log.d("TAG", "getBreakingNews: " + resposValue)
             breakingNew.postValue(resposValue)
         }
+    }
 
+    fun getMovies(): Flow<PagingData<Article>> {
+        return repository.getMovies()
+            .map { pagingData ->
+                pagingData.map {
+                    it
+                }
+            }
+            .cachedIn(viewModelScope)
     }
 
     fun searchNews(searchQuery: String) = viewModelScope.launch {

@@ -14,4 +14,8 @@
         android:id="@+id/searchFragment"
         android:icon="@drawable/ic_baseline_search_24"
         android:title="@string/search" />
+    <item
+        android:id="@+id/paginationFragment"
+        android:icon="@drawable/ic_baseline_warning_30"
+        android:title="pagination" />
 </menu>

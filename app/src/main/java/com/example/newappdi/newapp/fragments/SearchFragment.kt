@@ -1,4 +1,4 @@
-package com.example.newappdi.NewsApp.UI.fragments
+package com.example.newappdi.newapp.fragments
 
 import android.os.Bundle
 import android.text.Editable
@@ -10,17 +10,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.androiddevs.mvvmnewsapp.db.ArticleDatabase
-import com.example.newappdi.R
 import com.example.newappdi.NewsApp.Adapter.NewAdapter
-import com.example.newappdi.NewsApp.Repository.NetworkRepo
-import com.example.newappdi.NewsApp.Repository.NewsViewModelProviderFactory
 import com.example.newappdi.NewsApp.Utils.Resource
 import com.example.newappdi.NewsApp.ViewModel.NewViewModel
-import com.example.newappdi.NewsApp.ViewModel.SampleViewModel
-import com.example.newappdi.databinding.FragmentFavouriteBinding
 import com.example.newappdi.databinding.FragmentSearchBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -29,11 +22,6 @@ import dagger.hilt.android.AndroidEntryPoint
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SearchFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 @AndroidEntryPoint
 class SearchFragment : Fragment() {
     private lateinit var binding: FragmentSearchBinding

@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_home"
-    app:startDestination="@id/breaking_news">
+    app:startDestination="@id/paginationFragment">
 
     <fragment
         android:id="@+id/breaking_news"
-        android:name="com.example.newappdi.NewsApp.UI.fragments.Breaking_NewsFragment"
+        android:name="com.example.newappdi.newapp.fragments.Breaking_NewsFragment"
         android:label="@string/breaking_new"
         tools:layout="@layout/fragment_breaking_news">
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/favouriteFragment"
-        android:name="com.example.newappdi.NewsApp.UI.fragments.FavouriteFragment"
+        android:name="com.example.newappdi.newapp.fragments.FavouriteFragment"
         android:label="@string/favourite"
         tools:layout="@layout/fragment_favourite">
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.example.newappdi.NewsApp.UI.fragments.SearchFragment"
+        android:name="com.example.newappdi.newapp.fragments.SearchFragment"
         android:label="@string/search"
         tools:layout="@layout/fragment_search">
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.newappdi.NewsApp.UI.fragments.DetailFragment"
+        android:name="com.example.newappdi.newapp.fragments.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail">
         <argument
@@ -57,5 +57,10 @@
             app:argType="com.example.newappdi.NewsApp.Model.Article" />
 
     </fragment>
+    <fragment
+        android:id="@+id/paginationFragment"
+        android:name="com.example.newappdi.newapp.fragments.PaginationFragment"
+        android:label="fragment_pagination"
+        tools:layout="@layout/fragment_pagination" />
 
 </navigation>

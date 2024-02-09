@@ -53,7 +53,4 @@ class NetworkingModule {
     fun provideChannelDao( appDatabase: ArticleDatabase): ArticleDao {
         return appDatabase.getArticleDao()
     }
-
-
-
 }

@@ -9,3 +9,6 @@ annotation class BaseUrl1Retrofit
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
 annotation class BaseUrl2Retrofit
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class BaseUrl3ShopRetrofit

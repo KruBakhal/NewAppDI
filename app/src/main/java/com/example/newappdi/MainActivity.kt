@@ -7,6 +7,7 @@ import android.view.View
 import com.example.newappdi.api_calling.APICallActivity
 import com.example.newappdi.newapp.NewsActivity
 import com.example.newappdi.quizgame.GameActivity
+import com.example.newappdi.tabpager.TabPagerLayoutActivity
 import com.example.newappdi.tictacto.TicTacTOActivity
 
 class MainActivity : AppCompatActivity() {
@@ -24,14 +25,19 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this@MainActivity, APICallActivity::class.java))
             }
         }
-         findViewById<View>(R.id.tctct).apply {
+        findViewById<View>(R.id.tctct).apply {
             setOnClickListener {
                 startActivity(Intent(this@MainActivity, TicTacTOActivity::class.java))
             }
         }
-         findViewById<View>(R.id.game).apply {
+        findViewById<View>(R.id.game).apply {
             setOnClickListener {
                 startActivity(Intent(this@MainActivity, GameActivity::class.java))
+            }
+        }
+        findViewById<View>(R.id.tabs).apply {
+            setOnClickListener {
+                startActivity(Intent(this@MainActivity, TabPagerLayoutActivity::class.java))
             }
         }
     }
